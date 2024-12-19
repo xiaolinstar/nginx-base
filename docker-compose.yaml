@@ -1,0 +1,23 @@
+networks:
+  nginx-example:
+    driver: bridge
+    external: false
+
+services:
+  vue-front-demo:
+    image: nginx-example/vue-front:0.0.1
+    container_name: vue-front-demo
+    ports:
+      - "80:80"
+    networks:
+      - nginx-example
+
+  go-backend-demo:
+    image: nginx-example/go-backend:0.0.1
+    container_name: go-backend-demo
+    ports:
+      - "9000:9000"
+    networks:
+      - nginx-example
+
+

@@ -1,0 +1,14 @@
+networks:
+  nginx-backend:
+    driver: bridge
+    external: false
+
+services:
+  go-backend-demo:
+    image: nginx-example/go-backend:0.0.1
+    container_name: go-backend-demo
+    ports:
+      - "9000:9000"
+    networks:
+      - nginx-backend
+
