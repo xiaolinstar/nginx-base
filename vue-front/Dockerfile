@@ -1,4 +1,4 @@
-FROM node:22-alpine3.20 as build-stage
+FROM node:22-alpine3.20 AS build-stage
 # 作者信息
 LABEL authors="xing.xiaolin@foxmail.com"
 
@@ -9,7 +9,7 @@ WORKDIR /app
 COPY . .
 
 # 安装依赖
-RUN npm install
+RUN npm install --registry=https://registry.npm.taobao.org
 
 # 构建生产环境下到Vue项目
 RUN npm run build

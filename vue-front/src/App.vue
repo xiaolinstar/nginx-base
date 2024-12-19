@@ -7,7 +7,6 @@ import axios from "axios";
 // 不跨域
 let response = axios.get("/api/hello")
     .then(function (response) {
-      console.log("发送 Axios 请求到 /api/hello")
       console.log(response)
     })
 
@@ -15,7 +14,6 @@ let response = axios.get("/api/hello")
 // 跨域，通过宿主机访问后端项目。如果不在同一个主机上，可通过域名访问
 axios.get("http://localhost:9000/hello")
     .then(function (response) {
-      console.log("发送 Axios 请求到 http://localhost:9000/hello")
       console.log(response)
     })
 
